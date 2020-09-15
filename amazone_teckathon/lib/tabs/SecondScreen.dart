@@ -31,7 +31,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     width: MediaQuery.of(context).size.width / 1.2,
                     headerAnimationLoop: false,
                     animType: AnimType.BOTTOMSLIDE,
-                    title: 'About Requist',
+                    title: 'About Request',
                     desc:
                         'Feel free to share with us your needs or any humanity cases you knew by filling this page form and press request.',
                   )..show()

@@ -287,7 +287,7 @@ class _WelcomeState extends State<Welcome> {
     if (true) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Golden() //Signup()//testtest
+        MaterialPageRoute(builder: (context) => Golden()
 
             ),
       );
@@ -340,6 +340,6 @@ void getevents() async {
         events.add(obj);
       }
   } else {
-    throw Exception('yousef Failed to loud categories');
+    throw Exception('yousef Failed to loud ');
   }
 }

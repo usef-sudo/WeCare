@@ -1,4 +1,7 @@
 
+import 'package:amazone_teckathon/pages/About.dart';
+import 'package:amazone_teckathon/pages/Call.dart';
+import 'package:amazone_teckathon/pages/Welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -22,7 +25,13 @@ class _AccountState extends State<Account> {
               height: 57,
             ),
             InkWell(
-
+              onTap: () => {
+                Navigator.pop(context),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Call()),
+                )
+              },
               child: ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("Settings"),
@@ -30,7 +39,12 @@ class _AccountState extends State<Account> {
             ),
             Divider(),
             InkWell(
-
+              onTap: () => {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Welcome()),
+                )
+              },
               child: ListTile(
                 leading: Icon(Icons.lock_open),
                 title: Text("LogOut"),
@@ -102,7 +116,12 @@ class _AccountState extends State<Account> {
                     title: Text("ABOUT WeCare "),
                     trailing: Icon(Icons.arrow_right),
                   ),
-
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => About()),
+                    )
+                  },
                 )),
             SizedBox(
               height: 15,
