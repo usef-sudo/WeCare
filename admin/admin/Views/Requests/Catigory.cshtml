@@ -1,0 +1,86 @@
+﻿@model IEnumerable<admin.Models.Request>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discreption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discreption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @if (item.Available)
+                    {
+                        <input type="checkbox" asp-for="@item.Available" checked onclick="placeCheck(this, @item.RequestID)" />
+                    }
+                    else
+                    {
+                        <input type="checkbox" asp-for="@item.Available" onclick="placeCheck(this, @item.RequestID)" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RequestID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RequestID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RequestID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+
+    function placeCheck(val, id) {
+
+        var retVal = confirm("Do you want to adapt this request ?");
+
+        if (retVal == true) {
+            debugger;
+            $.get(
+                "https://localhost:44363/Donation/MakeAvailable",
+                { id: id, val: val.checked },
+                function (data) {
+                    alert('page content: ' + data);
+                }
+            ); return true;
+        } else {
+            val.checked = !val.checked;
+            return false;
+        }
+
+
+    }
+
+</script>

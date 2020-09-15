@@ -1,0 +1,71 @@
+﻿@model IEnumerable<admin.Models.Donation>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discreption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PickUp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discreption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PickUp)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ImgData)*@
+                    <img src="data:image/png;base64,@Convert.ToBase64String(@item.ImgData)" class="img-fluid" width="150" />
+                </td>
+                <td>
+                    @if (!item.Available)
+                    {
+                        <a asp-action="MakeAvailable" asp-controller="Donation" asp-route-id="@item.DonationID"> Adapt </a>
+
+                    }
+
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DonationID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DonationID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DonationID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
