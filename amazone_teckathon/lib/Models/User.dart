@@ -1,5 +1,4 @@
-import 'package:WeCare/Models/Donation.dart';
-import 'package:WeCare/Models/Requist.dart';
+
 
 class User {
   String email;

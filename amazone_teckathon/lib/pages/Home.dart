@@ -1,6 +1,10 @@
 
-import 'package:amazone_teckathon/pages/Notifications.dart';
+import 'package:amazone_teckathon/shared.dart';
+import 'package:amazone_teckathon/tabs/FirstScreen.dart';
+import 'package:amazone_teckathon/tabs/SecondScreen.dart';
 import 'package:flutter/material.dart';
+
+import 'Notifications.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,7 +37,22 @@ class _HomeState extends State<Home> {
                     size: 36.0,
                   ),
                 ),
-
+                if (notif.length > 0)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 2.0),
+                    child: CircleAvatar(
+                      radius: 8.0,
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
+                      child: Text(
+                        notif.length.toString(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),
@@ -46,7 +65,10 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FirstScreen())),
+              },
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Container(
@@ -82,7 +104,10 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SecondScreen())),
+              },
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Container(

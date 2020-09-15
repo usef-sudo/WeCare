@@ -1,4 +1,5 @@
-import 'package:WeCare/Models/Charity.dart';
+
+import 'package:amazone_teckathon/Models/Charity.dart';
 
 class Event {
   String name;

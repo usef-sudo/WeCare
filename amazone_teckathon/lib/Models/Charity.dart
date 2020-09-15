@@ -1,5 +1,7 @@
-import 'package:WeCare/Models/Event.dart';
-import 'package:WeCare/Models/Requist.dart';
+
+
+import 'package:amazone_teckathon/Models/Event.dart';
+import 'package:amazone_teckathon/Models/Requist.dart';
 
 class Charity {
   String email;
@@ -9,9 +11,11 @@ class Charity {
   var logo;
   List<Request> charitydonations;
   List<Event> events;
+  String accountnumber;
 
   Charity(
       {this.discription,
+        this.accountnumber,
       this.charitydonations,
       this.email,
       this.events,
@@ -31,5 +35,6 @@ Charity _$productFromJson(Map<String, dynamic> json) {
       events: json['events'],
       logo: json['logo'],
       name: json['name'],
+      accountnumber: json["bankAccount"],
       password: json['password']);
 }

@@ -1,6 +1,12 @@
 import 'dart:convert';
 
+import 'package:amazone_teckathon/Models/Charity.dart';
+import 'package:amazone_teckathon/Models/Event.dart';
 import 'package:amazone_teckathon/main.dart';
+import 'package:amazone_teckathon/pages/Login.dart';
+import 'package:amazone_teckathon/shared.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 
@@ -9,6 +15,7 @@ class Welcome extends StatefulWidget {
   _WelcomeState createState() => _WelcomeState();
 }
 
+//final _formKey = GlobalKey<FormState>();
 
 String _password;
 String _email;
@@ -16,7 +23,10 @@ String _email;
 class _WelcomeState extends State<Welcome> {
   @override
   void initState() {
+    // TODO: implement initState
 
+    getevents();
+    getchrities();
   }
 
   @override
@@ -24,7 +34,14 @@ class _WelcomeState extends State<Welcome> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(242, 247, 251, 1),
-
+        /*appBar: AppBar(
+                      title: Center(
+                          child: Text(
+                        "Welcome",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                      backgroundColor: Colors.blue[300],
+                    ),*/
         body: Form(
           //R key: _formKey,
           child: SingleChildScrollView(
@@ -33,7 +50,13 @@ class _WelcomeState extends State<Welcome> {
                 SizedBox(
                   height: 30,
                 ),
-
+                /* Container(
+                              height: 200,
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                child: Image.asset('images/wecare.jpeg'),
+                              ),
+                            ),*/
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -44,7 +67,20 @@ class _WelcomeState extends State<Welcome> {
                   height: 30,
                 ),
 
-
+                /*  Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.email),
+                                  Text(
+                                    "Email: ",
+            
+                                    style: TextStyle(color: Colors.black),
+                                    textAlign: TextAlign.end, // has impact
+                                  ),
+                                ],
+                              ),
+                            ),*/
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
@@ -173,7 +209,7 @@ class _WelcomeState extends State<Welcome> {
                                                 color: Colors.black
                                                     .withOpacity(0.3))),
                                         padding: EdgeInsets.all(8),
-                                        color: Colors.blue,
+                                        color: Colors.blue[50],
                                         child: Text(
                                           "REGISTER",
                                           style:
@@ -182,8 +218,13 @@ class _WelcomeState extends State<Welcome> {
                                         onPressed: () => {
                                           print(_email),
                                           print(_password),
-
-
+                                          // _password="",
+                                          // _email="",
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => Login()),
+                                          )
                                         },
                                       )),
                                   Container(
@@ -198,12 +239,13 @@ class _WelcomeState extends State<Welcome> {
                                                 color: Colors.black
                                                     .withOpacity(0.3))),
                                         padding: EdgeInsets.all(8),
-                                        color: Colors.blue,
+                                        color: Colors.blue[50],
                                         child: Text(
                                           "Login",
                                           style:
                                               TextStyle(color: Colors.black87),
                                         ),
+                                        onPressed: () => {loguser()},
                                       ))
                                 ],
                               ),
@@ -223,9 +265,81 @@ class _WelcomeState extends State<Welcome> {
     );
   }
 
+  void loguser() async {
+    Map<String, String> headers = {};
+    headers['Content-Type'] = "application/json";
+    var body;
+    body = json.encode({
+      "email": _email,
+      "password": _password,
+      "nickName": "fname",
+      "age": 20
+    });
+    String url;
+    url = "******/api/users/a7a";
+    /*final response = await http.post(
+                  url,
+                  body: body,
+                  headers: headers,
+                );*/
+    print(url);
+    //if (response.statusCode == 200) {
+    if (true) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Golden() //Signup()//testtest
 
+            ),
+      );
+    } else {
+      AwesomeDialog(
+        dialogType: DialogType.ERROR,
+        context: context,
+        width: MediaQuery.of(context).size.width / 1.2,
+        headerAnimationLoop: false,
+        animType: AnimType.BOTTOMSLIDE,
+        title: 'Sorry',
+        desc: 'Please check you data and try again ',
+      )..show();
+      throw Exception('Failed to load item');
+    }
+  }
 }
 
+void getchrities() async {
+  String url = "https://www*******/api/charities";
+  final response = await http.get(url);
 
+  if (response.statusCode == 200) {
+    List<dynamic> data = json.decode(response.body);
+    print(data.toString());
 
+    if (charities.length < 1)
+      for (int i = 0; i < data.length; i++) {
+        Charity obj = Charity.fromJson(data[i]);
 
+        charities.add(obj);
+      }
+  } else {
+    throw Exception('yousef Failed to loud ');
+  }
+}
+
+void getevents() async {
+  String url = "https://www*******/api/events";
+  final response = await http.get(url);
+
+  if (response.statusCode == 200) {
+    List<dynamic> data = json.decode(response.body);
+    print(data.toString());
+
+    if (charities.length < 1)
+      for (int i = 0; i < data.length; i++) {
+        Event obj = Event.fromJson(data[i]);
+
+        events.add(obj);
+      }
+  } else {
+    throw Exception('yousef Failed to loud categories');
+  }
+}
