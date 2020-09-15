@@ -32,6 +32,8 @@ dependencies:
   awesome_dialog: ^1.2.0
   share: ^0.6.4
   http: ^0.12.2
+  image_picker_gallery_camera: ^0.1.6
+
 
 
 

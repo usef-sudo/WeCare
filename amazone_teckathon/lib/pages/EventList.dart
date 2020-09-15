@@ -1,6 +1,7 @@
 
 import 'package:amazone_teckathon/Models/Charity.dart';
 import 'package:amazone_teckathon/Models/Event.dart';
+import 'package:amazone_teckathon/shared.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -11,21 +12,7 @@ class EventListPage extends StatefulWidget {
 }
 
 class _EventListPageState extends State<EventListPage> {
-  List<Event> events = [
-    Event(
-        discription:
-            "aaaaaaaaaaaaar ttttttttttttttt tttttttttejiponfinojv ijoijogijeorith oijoijoi joioitrj oioi joi joij oij oj aaaaaaaaaaaaaaaa",
-        money: 100,
-        inprosses: 0,
-        name: "onve  t gtrtree",
-        owner: Charity(name: "one charity")),
-    Event(
-        discription: "bbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        money: 200,
-        inprosses: 0,
-        name: "twervreref 4rfregergf evero",
-        owner: Charity(name: "two cha e trb t dqece rity")),
-  ];
+
   final _formkey = GlobalKey<FormState>();
 
   List<Event> searchResults;
@@ -35,7 +22,23 @@ class _EventListPageState extends State<EventListPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    events = [
+      Event(
+          discription:
+          "aaaaaaaaaaaaar ttttttttttttttt tttttttttejiponfinojv ijoijogijeorith oijoijoi joioitrj oioi joi joij oij oj aaaaaaaaaaaaaaaa",
+          money: 100,
+          inprosses: 0,
+          name: "onve  t gtrtree",
+          owner: Charity(name: "one charity")),
+      Event(
+          discription: "bbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          money: 200,
+          inprosses: 0,
+          name: "twervreref 4rfregergf evero",
+          owner: Charity(name: "two cha e trb t dqece rity")),
+    ];
     searchResults = events;
+
   }
 
   int pay = 0;

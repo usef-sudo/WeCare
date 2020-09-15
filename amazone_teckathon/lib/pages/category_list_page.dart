@@ -13,19 +13,7 @@ class CategoryListPage extends StatefulWidget {
 }
 
 class _CategoryListPageState extends State<CategoryListPage> {
-  List<Charity> charities = [
-    Charity(
-        discription: "yayayayayyayayayayayayay",
-        email: "ana@jdmplp.coid",
-        name: "the hashmia found organization charity ",
-        password: "*********",
-        charitydonations: [
-          Request(
-            discription: "asdfghjklktrewsdfghjkjhgfddcvbnm,mnbv",
-            location: "Amman",
-          ),
-        ])
-  ];
+
 
   List<Charity> searchResults;
   TextEditingController searchController = TextEditingController();
@@ -34,6 +22,19 @@ class _CategoryListPageState extends State<CategoryListPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    charities = [
+      Charity(
+          discription: "yayayayayyayayayayayayay",
+          email: "ana@jdmplp.coid",
+          name: "the hashmia found organization charity ",
+          password: "*********",
+          charitydonations: [
+            Request(
+              discription: "asdfghjklktrewsdfghjkjhgfddcvbnm,mnbv",
+              location: "Amman",
+            ),
+          ])
+    ];
     searchResults = charities;
   }
 
