@@ -11,48 +11,48 @@ namespace TAlaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CharitiesController : ControllerBase
+    public class EventsController : ControllerBase
     {
         private readonly dataContext _context;
 
-        public CharitiesController(dataContext context)
+        public EventsController(dataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Charities
+        // GET: api/Events
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Charity>>> GetCharity()
+        public async Task<ActionResult<IEnumerable<Event>>> GetEvent()
         {
-            return await _context.Charity.ToListAsync();
+            return await _context.Event.ToListAsync();
         }
 
-        // GET: api/Charities/5
+        // GET: api/Events/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Charity>> GetCharity(int id)
+        public async Task<ActionResult<Event>> GetEvent(int id)
         {
-            var charity = await _context.Charity.FindAsync(id);
+            var @event = await _context.Event.FindAsync(id);
 
-            if (charity == null)
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            return charity;
+            return @event;
         }
 
-        // PUT: api/Charities/5
+        // PUT: api/Events/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCharity(int id, Charity charity)
+        public async Task<IActionResult> PutEvent(int id, Event @event)
         {
-            if (id != charity.CharityID)
+            if (id != @event.EventID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(charity).State = EntityState.Modified;
+            _context.Entry(@event).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace TAlaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CharityExists(id))
+                if (!EventExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace TAlaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Charities
+        // POST: api/Events
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Charity>> PostCharity(Charity charity)
+        public async Task<ActionResult<Event>> PostEvent(Event @event)
         {
-            _context.Charity.Add(charity);
+            _context.Event.Add(@event);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCharity", new { id = charity.CharityID }, charity);
+            return CreatedAtAction("GetEvent", new { id = @event.EventID }, @event);
         }
 
-        // DELETE: api/Charities/5
+        // DELETE: api/Events/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Charity>> DeleteCharity(int id)
+        public async Task<ActionResult<Event>> DeleteEvent(int id)
         {
-            var charity = await _context.Charity.FindAsync(id);
-            if (charity == null)
+            var @event = await _context.Event.FindAsync(id);
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            _context.Charity.Remove(charity);
+            _context.Event.Remove(@event);
             await _context.SaveChangesAsync();
 
-            return charity;
+            return @event;
         }
 
-        private bool CharityExists(int id)
+        private bool EventExists(int id)
         {
-            return _context.Charity.Any(e => e.CharityID == id);
+            return _context.Event.Any(e => e.EventID == id);
         }
     }
 }

@@ -11,48 +11,48 @@ namespace TAlaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CharitiesController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly dataContext _context;
 
-        public CharitiesController(dataContext context)
+        public UsersController(dataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Charities
+        // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Charity>>> GetCharity()
+        public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
-            return await _context.Charity.ToListAsync();
+            return await _context.User.ToListAsync();
         }
 
-        // GET: api/Charities/5
+        // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Charity>> GetCharity(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-            var charity = await _context.Charity.FindAsync(id);
+            var user = await _context.User.FindAsync(id);
 
-            if (charity == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return charity;
+            return user;
         }
 
-        // PUT: api/Charities/5
+        // PUT: api/Users/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCharity(int id, Charity charity)
+        public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != charity.CharityID)
+            if (id != user.UserID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(charity).State = EntityState.Modified;
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace TAlaApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CharityExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,49 @@ namespace TAlaApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Charities
+        // POST: api/Users
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Charity>> PostCharity(Charity charity)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-            _context.Charity.Add(charity);
+            _context.User.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCharity", new { id = charity.CharityID }, charity);
+            return CreatedAtAction("GetUser", new { id = user.UserID }, user);
+        }
+        [HttpPost("myUser")]
+        public ActionResult<User> AuthUser(User user)
+        {
+            if (_context.User.Where(x => x.Email == user.Email).FirstOrDefault().UserID != null)
+            {
+                if (_context.User.Where(x => x.Password == user.Password).FirstOrDefault().UserID != null)
+                    return Ok("yes");
+            }
+            return NotFound();
         }
 
-        // DELETE: api/Charities/5
+
+
+        // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Charity>> DeleteCharity(int id)
+        public async Task<ActionResult<User>> DeleteUser(int id)
         {
-            var charity = await _context.Charity.FindAsync(id);
-            if (charity == null)
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Charity.Remove(charity);
+            _context.User.Remove(user);
             await _context.SaveChangesAsync();
 
-            return charity;
+            return user;
         }
 
-        private bool CharityExists(int id)
+        private bool UserExists(int id)
         {
-            return _context.Charity.Any(e => e.CharityID == id);
+            return _context.User.Any(e => e.UserID == id);
         }
     }
 }

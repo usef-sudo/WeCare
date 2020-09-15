@@ -17,6 +17,8 @@ namespace TAlaApi.Models
 
         public string Discreption { get; set; }
 
+        public Byte[] img { get; set; }
+
         public List<Request> CharityDonations { get; set; }
 
         public List<Event> Events { get; set; }

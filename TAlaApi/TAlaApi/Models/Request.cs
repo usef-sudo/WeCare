@@ -17,7 +17,7 @@ namespace TAlaApi.Models
 
         public string Type { get; set; }
 
-        public bool Adaptation { get; set; }
+        public bool Adoptation { get; set; }
 
         public int moneyRange { get; set; }
 
