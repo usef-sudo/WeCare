@@ -26,7 +26,7 @@ namespace admin.Controllers
             IEnumerable<Donation> donations = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 var response = client.GetAsync("donations");
                 response.Wait();
 
@@ -53,7 +53,7 @@ namespace admin.Controllers
             Donation donation = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"donations/{id}");
                 response.Wait();
@@ -90,7 +90,7 @@ namespace admin.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call Http POST
                 var postData = client.PostAsJsonAsync<Donation>("donations", model);
                 postData.Wait();
@@ -111,7 +111,7 @@ namespace admin.Controllers
             Donation donation = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"donations/{id}");
                 response.Wait();
@@ -144,7 +144,7 @@ namespace admin.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://localhost:44363/api/");
+                    client.BaseAddress = new Uri("https://localhost:44326/api/");
                     //Call HTTP PUT
                     var response = client.PutAsJsonAsync($"donations/{id}", donation);
                     response.Wait();
@@ -170,7 +170,7 @@ namespace admin.Controllers
             Donation donation = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"donations/{id}");
                 response.Wait();
@@ -198,7 +198,7 @@ namespace admin.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP Delete
                 var response = client.DeleteAsync($"donations/{model.DonationID}");
                 response.Wait();
@@ -221,7 +221,7 @@ namespace admin.Controllers
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.DeleteAsync($"donations/{id}");
                 response.Wait();
@@ -252,7 +252,7 @@ namespace admin.Controllers
             IEnumerable<Donation> donations = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 var response = client.GetAsync($"donations/{id}");
                 response.Wait();
 
@@ -264,7 +264,7 @@ namespace admin.Controllers
                     readData.Wait();
                     donations = readData.Result;
 
-                    client.BaseAddress = new Uri("https://localhost:44363/api/");
+                    client.BaseAddress = new Uri("https://localhost:44326/api/");
                     donations.FirstOrDefault().Available = true;
                     //Call HTTP PUT
                     response = client.PutAsJsonAsync($"donations/{id}", donations);

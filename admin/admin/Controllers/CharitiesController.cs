@@ -26,7 +26,7 @@ namespace admin.Controllers
             IEnumerable<Charity> charities = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 var response = client.GetAsync("charities");
                 response.Wait();
 
@@ -53,7 +53,7 @@ namespace admin.Controllers
             Charity charity = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"charities/{id}");
                 response.Wait();
@@ -90,7 +90,7 @@ namespace admin.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call Http POST
                 var postData = client.PostAsJsonAsync<Charity>("charities", model);
                 postData.Wait();
@@ -111,7 +111,7 @@ namespace admin.Controllers
             Charity charity = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"charities/{id}");
                 response.Wait();
@@ -144,7 +144,7 @@ namespace admin.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://localhost:44363/api/");
+                    client.BaseAddress = new Uri("https://localhost:44326/api/");
                     //Call HTTP PUT
                     var response = client.PutAsJsonAsync($"charities/{id}", charity);
                     response.Wait();
@@ -172,7 +172,7 @@ namespace admin.Controllers
             Charity charity = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.GetAsync($"charities/{id}");
                 response.Wait();
@@ -200,7 +200,7 @@ namespace admin.Controllers
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP Delete
                 var response = client.DeleteAsync($"charities/{model.CharityID}");
                 response.Wait();
@@ -224,7 +224,7 @@ namespace admin.Controllers
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 //Call HTTP GET
                 var response = client.DeleteAsync($"charities/{id}");
                 response.Wait();

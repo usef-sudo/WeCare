@@ -3,12 +3,8 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -49,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.PickUp)
                 </td>
                 <td>
-                    @*@Html.DisplayFor(modelItem => item.ImgData)*@
+                    @Html.DisplayFor(modelItem => item.ImgData)
                     <img src="data:image/png;base64,@Convert.ToBase64String(@item.ImgData)" class="img-fluid" width="150" />
                 </td>
                 <td>
@@ -68,4 +64,13 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
+
+
+@*<div class="jumbotron" style="text-align:center">*@
+    <h1 class="display-4" style="text-align:center; padding-top:20px; font-family:'Times New Roman', Times, serif; color:steelblue">Welcome to</h1>
+    <img src="~/1.png" style="padding-left:160px; "/>
+    @*<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+</div>*@

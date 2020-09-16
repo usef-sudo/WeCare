@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace admin.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -26,7 +26,7 @@ namespace admin.Controllers
             IEnumerable<Donation> donations = null;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44363/api/");
+                client.BaseAddress = new Uri("https://localhost:44326/api/");
                 var response = client.GetAsync("donations");
                 response.Wait();
 

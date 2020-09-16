@@ -1,53 +1,56 @@
 ﻿@model IEnumerable<admin.Models.Charity>
 
+
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Discreption)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discreption)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CharityID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CharityID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CharityID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label ></label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label ></label>
+                    <input class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                       
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a asp-controller="Home" asp-action="Index">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </a>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                        @*<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new Charity</a>*@
+                        <a asp-controller="Charities" asp-action="Create">Register as a new Charity</a>
+                    </p>
+                    <p>
+                        <button type="submit" asp-page-handler="SendVerificationEmail" class="btn-link" style="padding:0px;margin:0px;border:0px">Resend email confirmation</button>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    
+</div>
+

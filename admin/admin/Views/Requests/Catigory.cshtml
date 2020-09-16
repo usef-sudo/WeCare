@@ -4,14 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+    <h1> Index route </h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="table-active">
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
@@ -30,7 +30,8 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+
+            <tr class="table-primary">
                 <td>
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
@@ -56,6 +57,7 @@
                     <a asp-action="Delete" asp-route-id="@item.RequestID">Delete</a>
                 </td>
             </tr>
+            
         }
     </tbody>
 </table>
