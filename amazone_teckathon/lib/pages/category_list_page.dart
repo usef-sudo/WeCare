@@ -62,7 +62,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
                       animType: AnimType.BOTTOMSLIDE,
                       title: 'About Events',
                       desc:
-                          'clp for those awesome charities for their awesome work so far.',
+                          'here you can find all the charities,big clap for those awesome charities for their awesome work so far.',
                     )..show()
                   },
                 ),

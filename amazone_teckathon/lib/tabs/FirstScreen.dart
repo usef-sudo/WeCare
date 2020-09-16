@@ -12,8 +12,8 @@ class FirstScreen extends StatefulWidget {
 
 final _formKey = GlobalKey<FormState>();
 
-String _location;
-String _description;
+String  _location;
+String  _description;
 String _phone;
 bool f = false;
 var _image = null;
@@ -58,7 +58,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     animType: AnimType.BOTTOMSLIDE,
                     title: 'About Donation',
                     desc:
-                        'For any usable items you would like to donate just fill this page form and press Donate.',
+                        ' You spread hop in life by what you give Thank you. For any usable items you would like to donate with just fill this page form and press Donate.',
                   )..show()
                 },
                 child: Icon(
@@ -342,7 +342,7 @@ class _FirstScreenState extends State<FirstScreen> {
         headerAnimationLoop: false,
         animType: AnimType.BOTTOMSLIDE,
         title: 'Done',
-        desc: 'You spread hop in life by what you give Thank you. ',
+        desc: 'Thank you for being part of changing others life. Your donation sent successfully. ',
       )..show();
     } else {
       AwesomeDialog(

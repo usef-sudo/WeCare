@@ -66,7 +66,7 @@ class _EventListPageState extends State<EventListPage> {
                     animType: AnimType.BOTTOMSLIDE,
                     title: 'About Events',
                     desc:
-                        'here you can see our charites events please help as you can..',
+                        'Together hand in hand to spread goodness of unlimited givin to those in need please help us as much as you can. ',
                   )..show()
                 },
               ),

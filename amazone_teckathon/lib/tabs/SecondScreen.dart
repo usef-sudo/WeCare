@@ -33,7 +33,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     animType: AnimType.BOTTOMSLIDE,
                     title: 'About Request',
                     desc:
-                        'Feel free to share with us your needs or any humanity cases you knew by filling this page form and press request.',
+                        'carring about each other represent life\'s greatest value Feel free to share with us your needs or any humanity cases you know by filling this page form and press request.',
                   )..show()
                 },
                 child: Icon(
@@ -200,7 +200,7 @@ class _SecondScreenState extends State<SecondScreen> {
                         animType: AnimType.BOTTOMSLIDE,
                         title: 'Done',
                         desc:
-                            'Carring about each other represent life\'s greatest value don\'t worry we are here for you.',
+                            'Don\'t worry we are here for you. Your request sent successfully  ',
                       )..show();
                     // Navigator
                   },
