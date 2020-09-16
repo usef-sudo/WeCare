@@ -87,11 +87,10 @@ namespace TAlaApi.Controllers
         [HttpPost("myUser")]
         public ActionResult<User> AuthUser(User user)
         {
-            if (_context.User.Where(x => x.Email == user.Email).FirstOrDefault().UserID != null)
-            {
-                if (_context.User.Where(x => x.Password == user.Password).FirstOrDefault().UserID != null)
+            if (_context.User.Where(x => x.Email == user.Email && x.Password == user.Password).Any())
+                {
                     return Ok("yes");
-            }
+                }
             return NotFound();
         }
 
