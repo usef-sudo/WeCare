@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -49,52 +48,7 @@ class _LoginState extends State<Login> {
               color: Colors.black,
             ),
           )),
-
-//bottom: ,
         ),
-        /*bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-
-          currentIndex: 0, // this will be set when a new tab is tapped
-          items: [
-            BottomNavigationBarItem(
-              icon: InkWell(
-                onTap: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Login()),
-                  )
-                },
-                child: Text(
-                  DemoLocalizations.of(context).translate('log'),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-              ),
-              title: new Text(
-                '',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: InkWell(
-                child: Text(
-                  DemoLocalizations.of(context).translate('sign'),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-                onTap: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Signup()),
-                  )
-                },
-              ),
-              title: new Text(
-                '',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-          ],
-        ),*/
         body: Form(
           key: _formKey2,
           child: Padding(
@@ -105,20 +59,6 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 30,
                   ),
-                  /*    Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Icon(Icons.email),
-                        Text(
-                          "Email: ",
-
-                          style: TextStyle(color: Colors.black),
-                          textAlign: TextAlign.end, // has impact
-                        ),
-                      ],
-                    ),
-                  ),*/
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -150,20 +90,6 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 2,
                   ),
-                  /* Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Icon(Icons.lock),
-                        Text(
-                          "Password : ",
-
-                          style: TextStyle(color: Colors.black),
-                          textAlign: TextAlign.end, // has impact
-                        ),
-                      ],
-                    ),
-                  ),*/
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -176,7 +102,6 @@ class _LoginState extends State<Login> {
                               val.length < 6 ? 'Password too short.' : null,
                           onChanged: (val) => _passwordd = val,
                           obscureText: true,
-                          //  textAlign: TextAlign.right,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Password :',
@@ -194,20 +119,6 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 2,
                   ),
-                  /* Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Icon(Icons.person),
-                        Text(
-                          " Name : ",
-
-                          style: TextStyle(color: Colors.black),
-                          textAlign: TextAlign.end, // has impact
-                        ),
-                      ],
-                    ),
-                  ),*/
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -237,20 +148,6 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 2,
                   ),
-                  /*Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Icon(Icons.people),
-                        Text(
-                          "Age : ",
-
-                          style: TextStyle(color: Colors.black),
-                          textAlign: TextAlign.end, // has impact
-                        ),
-                      ],
-                    ),
-                  ),*/
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -260,12 +157,9 @@ class _LoginState extends State<Login> {
                         elevation: 5,
                         child: TextFormField(
                           keyboardType: TextInputType.number,
-
                           validator: (val) =>
                               val.length < 1 ? 'please enter your age.' : null,
                           onChanged: (val) => _age = val,
-
-                          //  textAlign: TextAlign.right,
                           decoration: InputDecoration(
                             icon: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -288,37 +182,6 @@ class _LoginState extends State<Login> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        /*
-                         Container(
-                                      width: 150,
-                                      height: 50,
-                                      child: FlatButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            side: BorderSide(
-                                                color: Colors.black
-                                                    .withOpacity(0.3))),
-                                        padding: EdgeInsets.all(8),
-                                        color: Colors.blue[50],
-                                        child: Text(
-                                          "REGISTER",
-                                          style:
-                                              TextStyle(color: Colors.black87),
-                                        ),
-                                        onPressed: () => {
-                                          print(_email),
-                                          print(_password),
-                                          // _password="",
-                                          // _email="",
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Login()),
-                                          )
-                                        },
-                                      )),
-                                      */
                         Container(
                             height: 50,
                             width: 150,
@@ -335,17 +198,19 @@ class _LoginState extends State<Login> {
                                 style: TextStyle(color: Colors.black87),
                               ),
                               onPressed: () => {
-                                print(_emaill),
-                                print(_fname),
-                                print(_passwordd),
-                                print(_age),
 //_age="",
 //_email="",
 //_fname="",
 //_age="",
 
                                 if (_formKey2.currentState.validate())
-                                  createuser(),
+                                  {
+                                    print(_emaill),
+                                    print(_fname),
+                                    print(_passwordd),
+                                    print(_age),
+                                    createuser(),
+                                  }
                               },
                             ))
                       ],
@@ -365,15 +230,13 @@ class _LoginState extends State<Login> {
     headers['Content-Type'] = "application/json";
     var body;
     body = json.encode({
-      {
-        "email": _emaill,
-        "password": _passwordd,
-        "nickName": _fname,
-        "age": _age
-      }
+      "email": _emaill,
+      "password": _passwordd,
+      "nickName": _fname,
+      "age": _age
     });
     String url;
-    url = "******/api/users";
+    url = "https://localhost:44326/api/users";
     final response = await http.post(
       url,
       body: body,

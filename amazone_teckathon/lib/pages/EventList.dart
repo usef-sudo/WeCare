@@ -1,10 +1,8 @@
-
 import 'package:amazone_teckathon/Models/Charity.dart';
 import 'package:amazone_teckathon/Models/Event.dart';
 import 'package:amazone_teckathon/shared.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-
 
 class EventListPage extends StatefulWidget {
   @override
@@ -12,7 +10,6 @@ class EventListPage extends StatefulWidget {
 }
 
 class _EventListPageState extends State<EventListPage> {
-
   final _formkey = GlobalKey<FormState>();
 
   List<Event> searchResults;
@@ -25,7 +22,7 @@ class _EventListPageState extends State<EventListPage> {
     events = [
       Event(
           discription:
-          "aaaaaaaaaaaaar ttttttttttttttt tttttttttejiponfinojv ijoijogijeorith oijoijoi joioitrj oioi joi joij oij oj aaaaaaaaaaaaaaaa",
+              "aaaaaaaaaaaaar ttttttttttttttt tttttttttejiponfinojv ijoijogijeorith oijoijoi joioitrj oioi joi joij oij oj aaaaaaaaaaaaaaaa",
           money: 100,
           inprosses: 0,
           name: "onve  t gtrtree",
@@ -38,7 +35,6 @@ class _EventListPageState extends State<EventListPage> {
           owner: Charity(name: "two cha e trb t dqece rity")),
     ];
     searchResults = events;
-
   }
 
   int pay = 0;

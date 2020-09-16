@@ -99,12 +99,11 @@ class _DetailsState extends State<Details> {
                             child: Text(
                                 widget.theone.charitydonations[i].discription),
                           ),
-
                           Center(
                             child: FlatButton(
                               color: Colors.white,
                               child: Text(
-                                "${   widget.theone.charitydonations[i].inprosses}/${   widget.theone.charitydonations[i].money}",
+                                "${widget.theone.charitydonations[i].inprosses}/${widget.theone.charitydonations[i].money}",
                                 style: TextStyle(fontSize: 30),
                               ),
                             ),
@@ -124,8 +123,7 @@ class _DetailsState extends State<Details> {
                                     context: context,
                                     child: new Dialog(
                                       child: Padding(
-                                        padding:
-                                        const EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Container(
                                           height: 550,
                                           child: Form(
@@ -142,55 +140,48 @@ class _DetailsState extends State<Details> {
                                                 ),
                                                 Padding(
                                                   padding:
-                                                  const EdgeInsets
-                                                      .all(8.0),
+                                                      const EdgeInsets.all(8.0),
                                                   child: Container(
-                                                    height: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .height /
-                                                        10,
-                                                    width: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .width,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height /
+                                                            10,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: Card(
                                                       elevation: 5,
                                                       // shadowColor: Colors.blue,
-                                                      color:
-                                                      Colors.blue[50],
-                                                      child:
-                                                      TextFormField(
+                                                      color: Colors.blue[50],
+                                                      child: TextFormField(
                                                         //  textAlign: TextAlign.right,
                                                         decoration:
-                                                        InputDecoration(
+                                                            InputDecoration(
                                                           border:
-                                                          InputBorder
-                                                              .none,
+                                                              InputBorder.none,
                                                           icon: Padding(
                                                             padding:
-                                                            const EdgeInsets
-                                                                .fromLTRB(
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0),
+                                                                const EdgeInsets
+                                                                        .fromLTRB(
+                                                                    10,
+                                                                    0,
+                                                                    0,
+                                                                    0),
                                                             child: Icon(
-                                                                Icons
-                                                                    .email),
+                                                                Icons.email),
                                                           ),
-                                                          hintText:
-                                                          'Email : ',
+                                                          hintText: 'Email : ',
                                                         ),
-                                                        validator: (val) =>
-                                                        val.length < 1
+                                                        validator: (val) => val
+                                                                    .length <
+                                                                1
                                                             ? 'please enter your email.'
                                                             : null,
 
-                                                        onChanged:
-                                                            (val) =>
-                                                        _email =
-                                                            val,
+                                                        onChanged: (val) =>
+                                                            _email = val,
                                                       ),
                                                     ),
                                                   ),
@@ -200,56 +191,51 @@ class _DetailsState extends State<Details> {
                                                 ),
                                                 Padding(
                                                   padding:
-                                                  const EdgeInsets
-                                                      .all(8.0),
+                                                      const EdgeInsets.all(8.0),
                                                   child: Container(
-                                                    height: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .height /
-                                                        10,
-                                                    width: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .width,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height /
+                                                            10,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: Card(
                                                       elevation: 5,
-                                                      child:
-                                                      TextFormField(
+                                                      child: TextFormField(
                                                         obscureText: true,
                                                         //  textAlign: TextAlign.right,
                                                         decoration:
-                                                        InputDecoration(
+                                                            InputDecoration(
                                                           icon: Padding(
                                                             padding:
-                                                            const EdgeInsets
-                                                                .fromLTRB(
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0),
+                                                                const EdgeInsets
+                                                                        .fromLTRB(
+                                                                    10,
+                                                                    0,
+                                                                    0,
+                                                                    0),
                                                             child: Icon(
-                                                                Icons
-                                                                    .lock),
+                                                                Icons.lock),
                                                           ),
                                                           border:
-                                                          InputBorder
-                                                              .none,
+                                                              InputBorder.none,
                                                           hintText:
-                                                          'Password :',
+                                                              'Password :',
                                                           //hintText: 'Password:',
                                                         ),
-                                                        validator: (val) =>
-                                                        val.length < 6
+                                                        validator: (val) => val
+                                                                    .length <
+                                                                6
                                                             ? 'Password too short.'
                                                             : null,
                                                         onChanged: (val) =>
-                                                        _password =
-                                                            val,
+                                                            _password = val,
                                                       ),
                                                       // shadowColor: Colors.blue,
-                                                      color:
-                                                      Colors.blue[50],
+                                                      color: Colors.blue[50],
                                                     ),
                                                   ),
                                                 ),
@@ -258,62 +244,62 @@ class _DetailsState extends State<Details> {
                                                 ),
                                                 Padding(
                                                   padding:
-                                                  const EdgeInsets
-                                                      .all(8.0),
+                                                      const EdgeInsets.all(8.0),
                                                   child: Container(
-                                                    height: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .height /
-                                                        10,
-                                                    width: MediaQuery.of(
-                                                        context)
-                                                        .size
-                                                        .width,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height /
+                                                            10,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: Card(
                                                       elevation: 5,
-                                                      child:
-                                                      TextFormField(
+                                                      child: TextFormField(
                                                         keyboardType:
-                                                        TextInputType
-                                                            .number,
+                                                            TextInputType
+                                                                .number,
                                                         decoration:
-                                                        InputDecoration(
+                                                            InputDecoration(
                                                           icon: Padding(
                                                             padding:
-                                                            const EdgeInsets
-                                                                .fromLTRB(
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0),
+                                                                const EdgeInsets
+                                                                        .fromLTRB(
+                                                                    10,
+                                                                    0,
+                                                                    0,
+                                                                    0),
                                                             child: Icon(Icons
                                                                 .attach_money),
                                                           ),
                                                           border:
-                                                          InputBorder
-                                                              .none,
-                                                          hintText:
-                                                          'Amount :',
+                                                              InputBorder.none,
+                                                          hintText: 'Amount :',
                                                           //hintText: 'Password:',
                                                         ),
                                                         validator: (val) => int
-                                                            .parse(
-                                                            val) >
-                                                            widget.theone.charitydonations[i]
-                                                                .money -
-                                                                widget.theone.charitydonations[i]
-                                                                    .inprosses
+                                                                    .parse(
+                                                                        val) >
+                                                                widget
+                                                                        .theone
+                                                                        .charitydonations[
+                                                                            i]
+                                                                        .money -
+                                                                    widget
+                                                                        .theone
+                                                                        .charitydonations[
+                                                                            i]
+                                                                        .inprosses
                                                             ? 'we dont need this amount'
                                                             : null,
-                                                        onChanged:
-                                                            (val) => pay =
-                                                            int.parse(
-                                                                val),
+                                                        onChanged: (val) =>
+                                                            pay =
+                                                                int.parse(val),
                                                       ),
                                                       // shadowColor: Colors.blue,
-                                                      color:
-                                                      Colors.blue[50],
+                                                      color: Colors.blue[50],
                                                     ),
                                                   ),
                                                 ),
@@ -323,19 +309,22 @@ class _DetailsState extends State<Details> {
                                                 Card(
                                                   elevation: 10,
                                                   child: new FlatButton(
-                                                      child: new Text(
-                                                          "Pay now"),
+                                                      child:
+                                                          new Text("Pay now"),
                                                       onPressed: () {
                                                         if (_formkey
                                                             .currentState
                                                             .validate())
                                                           setState(() {
-                                                            widget.theone.charitydonations[i]
+                                                            widget
+                                                                .theone
+                                                                .charitydonations[
+                                                                    i]
                                                                 .inprosses += pay;
                                                             Navigator.of(
-                                                                context,
-                                                                rootNavigator:
-                                                                true)
+                                                                    context,
+                                                                    rootNavigator:
+                                                                        true)
                                                                 .pop();
                                                           });
                                                       }),
@@ -350,8 +339,7 @@ class _DetailsState extends State<Details> {
                                 },
                                 child: Card(
                                   color: Colors.white,
-                                  child:
-                                  Center(child: Text("Donate Now")),
+                                  child: Center(child: Text("Donate Now")),
                                 ),
                               ),
                             ),
@@ -359,14 +347,6 @@ class _DetailsState extends State<Details> {
                           SizedBox(
                             height: 10,
                           ),
-
-
-
-
-
-
-
-
                         ],
                       ))),
                 )

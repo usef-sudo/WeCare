@@ -8034,24 +8034,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tala\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\GTS\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WeCareGit\\TAlaApi\\TAlaApi\\TAlaApi.csproj",
+      "projectUniqueName": "C:\\Users\\GTS\\Desktop\\teckathon\\WeCare\\TAlaApi\\TAlaApi\\TAlaApi.csproj",
       "projectName": "TAlaApi",
-      "projectPath": "D:\\WeCareGit\\TAlaApi\\TAlaApi\\TAlaApi.csproj",
-      "packagesPath": "C:\\Users\\Tala\\.nuget\\packages\\",
-      "outputPath": "D:\\WeCareGit\\TAlaApi\\TAlaApi\\obj\\",
+      "projectPath": "C:\\Users\\GTS\\Desktop\\teckathon\\WeCare\\TAlaApi\\TAlaApi\\TAlaApi.csproj",
+      "packagesPath": "C:\\Users\\GTS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GTS\\Desktop\\teckathon\\WeCare\\TAlaApi\\TAlaApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tala\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\GTS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"

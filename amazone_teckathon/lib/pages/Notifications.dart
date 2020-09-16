@@ -32,7 +32,7 @@ class _NotificationCenterState extends State<NotificationCenter> {
               Card(
                   elevation: 10,
                   child: ListTile(
-                    title: Text("Dear Yousef"),
+                    title: Text("Dear User"),
                     subtitle: Text("Welcome and thank you for using WeCare"),
                     trailing: Icon(Icons.delete),
                   ))

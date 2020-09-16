@@ -1,4 +1,3 @@
-
 import 'package:amazone_teckathon/Models/Charity.dart';
 import 'package:amazone_teckathon/Models/Requist.dart';
 import 'package:amazone_teckathon/pages/details.dart';
@@ -13,8 +12,6 @@ class CategoryListPage extends StatefulWidget {
 }
 
 class _CategoryListPageState extends State<CategoryListPage> {
-
-
   List<Charity> searchResults;
   TextEditingController searchController = TextEditingController();
 

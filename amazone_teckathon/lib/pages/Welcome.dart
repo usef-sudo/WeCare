@@ -15,8 +15,6 @@ class Welcome extends StatefulWidget {
   _WelcomeState createState() => _WelcomeState();
 }
 
-//final _formKey = GlobalKey<FormState>();
-
 String _password;
 String _email;
 
@@ -34,14 +32,6 @@ class _WelcomeState extends State<Welcome> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(242, 247, 251, 1),
-        /*appBar: AppBar(
-                      title: Center(
-                          child: Text(
-                        "Welcome",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                      backgroundColor: Colors.blue[300],
-                    ),*/
         body: Form(
           //R key: _formKey,
           child: SingleChildScrollView(
@@ -50,13 +40,6 @@ class _WelcomeState extends State<Welcome> {
                 SizedBox(
                   height: 30,
                 ),
-                /* Container(
-                              height: 200,
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                child: Image.asset('images/wecare.jpeg'),
-                              ),
-                            ),*/
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -66,21 +49,6 @@ class _WelcomeState extends State<Welcome> {
                 SizedBox(
                   height: 30,
                 ),
-
-                /*  Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.email),
-                                  Text(
-                                    "Email: ",
-            
-                                    style: TextStyle(color: Colors.black),
-                                    textAlign: TextAlign.end, // has impact
-                                  ),
-                                ],
-                              ),
-                            ),*/
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
@@ -152,7 +120,7 @@ class _WelcomeState extends State<Welcome> {
                                       Icon(Icons.lock),
                                       Text(
                                         "Password: ",
-            
+
                                         style: TextStyle(color: Colors.black),
                                         textAlign: TextAlign.end, // has impact
                                       ),
@@ -276,20 +244,18 @@ class _WelcomeState extends State<Welcome> {
       "age": 20
     });
     String url;
-    url = "******/api/users/a7a";
-    /*final response = await http.post(
-                  url,
-                  body: body,
-                  headers: headers,
-                );*/
+    url = "https://localhost:44326/api/users/myUser";
+    final response = await http.post(
+      url,
+      body: body,
+      headers: headers,
+    );
     print(url);
     //if (response.statusCode == 200) {
     if (true) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Golden()
-
-            ),
+        MaterialPageRoute(builder: (context) => Golden()),
       );
     } else {
       AwesomeDialog(
@@ -307,7 +273,7 @@ class _WelcomeState extends State<Welcome> {
 }
 
 void getchrities() async {
-  String url = "https://www*******/api/charities";
+  String url = "https://localhost:44326/api/charities";
   final response = await http.get(url);
 
   if (response.statusCode == 200) {
@@ -326,7 +292,7 @@ void getchrities() async {
 }
 
 void getevents() async {
-  String url = "https://www*******/api/events";
+  String url = "https://localhost:44326/api/events";
   final response = await http.get(url);
 
   if (response.statusCode == 200) {

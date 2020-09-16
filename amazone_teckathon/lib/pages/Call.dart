@@ -110,7 +110,6 @@ class _CallState extends State<Call> {
   }
 }
 
-
 class MyStatefulWidget2 extends StatefulWidget {
   MyStatefulWidget2({Key key}) : super(key: key);
 
