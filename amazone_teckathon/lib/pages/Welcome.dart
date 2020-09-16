@@ -213,7 +213,15 @@ class _WelcomeState extends State<Welcome> {
                                           style:
                                               TextStyle(color: Colors.black87),
                                         ),
-                                        onPressed: () => {loguser()},
+                                        onPressed: () => {
+                                          Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => Golden()),
+                                          ),
+
+                                          //  loguser()
+                                        },
                                       ))
                                 ],
                               ),

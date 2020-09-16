@@ -198,10 +198,6 @@ class _LoginState extends State<Login> {
                                 style: TextStyle(color: Colors.black87),
                               ),
                               onPressed: () => {
-//_age="",
-//_email="",
-//_fname="",
-//_age="",
 
                                 if (_formKey2.currentState.validate())
                                   {
@@ -209,7 +205,18 @@ class _LoginState extends State<Login> {
                                     print(_fname),
                                     print(_passwordd),
                                     print(_age),
-                                    createuser(),
+
+                                    _age = "",
+                                    _emaill = "",
+                                    _fname = "",
+                                    _age = "",
+
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Welcome()),
+                                    ),
+                                    // open if connected to server     createuser(),
                                   }
                               },
                             ))

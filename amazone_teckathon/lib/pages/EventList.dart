@@ -19,20 +19,20 @@ class _EventListPageState extends State<EventListPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    events = [
+    List<Event> events = [
       Event(
           discription:
-              "aaaaaaaaaaaaar ttttttttttttttt tttttttttejiponfinojv ijoijogijeorith oijoijoi joioitrj oioi joi joij oij oj aaaaaaaaaaaaaaaa",
-          money: 100,
+          "Iftar ramadan is a yearly event where we work to gather childrens from charities to feed them play with them and give them gifts. ",
+          money: 1000,
           inprosses: 0,
-          name: "onve  t gtrtree",
-          owner: Charity(name: "one charity")),
+          name: " RAMADAN",
+          owner: Charity(name: "Tkiyet Um Ali")),
       Event(
-          discription: "bbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          discription: "Winter cold will disapeer with your donations",
           money: 200,
           inprosses: 0,
-          name: "twervreref 4rfregergf evero",
-          owner: Charity(name: "two cha e trb t dqece rity")),
+          name: "Winter",
+          owner: Charity(name: "Najjar Charity")),
     ];
     searchResults = events;
   }
